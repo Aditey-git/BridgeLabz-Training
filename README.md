@@ -146,3 +146,99 @@
 ## 🔮 Upcoming Learning
 
 - Strings in C#
+
+📅 ## Day 06
+Date: 23-12-2025 (Wednesday)
+
+📘 What I Learned
+Learned about 2D arrays in C# and their implementation
+Understood how to declare, initialize, and access elements of 2D arrays
+Learned the basics of methods in C#, including method declaration and usage
+Practiced breaking programs into reusable methods for better code structure
+Improved logical thinking by applying arrays and methods together
+📝 Assignment for the Day
+Solved Level 2 problems on arrays
+Worked on conventional problem statements using 1D and 2D arrays, such as:
+BMI Calculation
+Grades of Students
+Finding the Largest and Second Largest Digit in a Number
+Strengthened understanding of array-based problem solving
+🔮 Upcoming Learning
+Methods in C#
+
+
+## 📅 **Day 07**
+
+**Date:** 24-12-2025 (Thursday)
+
+### 📘 **What I Learned**
+
+- Learned about **methods in C#**
+- Understood the **importance, implications, and use cases** of methods
+- Learned how methods improve **code reusability, modularity, and readability**
+- Practiced **method declaration, definition, and calling**
+- Improved logical thinking by breaking programs into **reusable methods**
+
+### 📝 **Assignment for the Day**
+
+- Solved **Level 1 and Level 2** problem sets on methods
+- Implemented **basic programming questions using methods**
+- Practiced **hands-on method calling** from the `Main()` method
+- Solved real-life based problems such as:
+  - Unit Conversion
+  - Voter’s Eligibility Check
+- Strengthened understanding of **method-based problem solving**
+
+### 🔮 **Upcoming Learning**
+
+- Solving **scenario-based questions**
+- Introduction to **OOPs**
+
+---
+
+## 📅 **Day 08**
+
+**Date:** 26-12-2025 (Friday)
+
+### 📘 **What I Learned**
+
+- Learned how to solve **scenario-based problems**
+- Understood how to **approach problems step by step**
+- Practiced breaking complex scenarios into **smaller logical parts**
+- Did additional **research on methods** and learned their **use cases**
+- Improved analytical and problem-solving skills
+
+### 📝 **Assignment for the Day**
+
+- Solved a **scenario-based Snake and Ladder problem**
+- Solved **Level 3 problems on Methods**
+- Applied methods to handle **complex logic efficiently**
+
+### 🔮 **Upcoming Learning**
+
+- **OOPs (Object-Oriented Programming)**
+
+---
+
+## 📅 **Day 09**
+
+**Date:** 29-12-2025 (Monday)
+
+### 📘 **What I Learned**
+
+- Gained deeper understanding of solving **scenario-based questions**
+- Solved **two different scenario-based problems**, each involving **different scenarios**
+- Improved ability to analyze problem statements and design solutions
+- Learned about **Classes and Objects in OOPs**
+- Understood how real-world entities are represented using **classes and objects**
+
+### 📝 **Assignment for the Day**
+
+- Solved **two scenario-based questions**
+- Completed **Level 1 problems on Classes and Objects**
+- Practiced creating objects and accessing class members
+- Strengthened foundational knowledge of **OOPs concepts**
+
+### 🔮 **Upcoming Learning**
+
+- **Pillars of OOPs**

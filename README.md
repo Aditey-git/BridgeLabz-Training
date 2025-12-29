@@ -146,25 +146,36 @@
 ## 🔮 Upcoming Learning
 
 - Strings in C#
+  
 
 
-📅 **Day 06**
-Date: 23-12-2025 (Wednesday)
+## 📅 **Day 06**
 
-📘 What I Learned
+
+**Date:** 23-12-2025 (Wednesday)
+
+📘 **What I Learned**
+
+
 Learned about 2D arrays in C# and their implementation
 Understood how to declare, initialize, and access elements of 2D arrays
 Learned the basics of methods in C#, including method declaration and usage
 Practiced breaking programs into reusable methods for better code structure
 Improved logical thinking by applying arrays and methods together
-📝 Assignment for the Day
+
+
+📝 **Assignment for the Day**
+
+
 Solved Level 2 problems on arrays
 Worked on conventional problem statements using 1D and 2D arrays, such as:
 BMI Calculation
 Grades of Students
 Finding the Largest and Second Largest Digit in a Number
 Strengthened understanding of array-based problem solving
-🔮 Upcoming Learning
+
+
+🔮 **Upcoming Learning**
 Methods in C#
 
 
@@ -243,4 +254,5 @@ Methods in C#
 ### 🔮 **Upcoming Learning**
 
 - **Pillars of OOPs**
+
 

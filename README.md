@@ -147,7 +147,8 @@
 
 - Strings in C#
 
-📅 ## Day 06
+
+📅 **Day 06**
 Date: 23-12-2025 (Wednesday)
 
 📘 What I Learned
@@ -242,3 +243,4 @@ Methods in C#
 ### 🔮 **Upcoming Learning**
 
 - **Pillars of OOPs**
+

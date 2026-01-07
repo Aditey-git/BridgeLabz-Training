@@ -22,7 +22,11 @@ namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
             empMenu.EmployeeChoice();
 
             // UC:02
-            empMenu.EmployeeChoice();
+            empMenu.EmployeeWage();
+
+            //UC:03
+
+            empMenu.EmployeePartTimeWage();
 
         }
     }

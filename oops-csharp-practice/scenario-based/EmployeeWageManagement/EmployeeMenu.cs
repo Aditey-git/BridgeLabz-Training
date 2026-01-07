@@ -22,9 +22,13 @@ namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
                 Console.WriteLine("Employee is Present");
             else
                 Console.WriteLine("Employee is Absent");
+        }
 
-
+            
+        public void EmployeeWage() {
             // UC:02
+            bool present = Iemployee.EmployeePresentOrNot();
+
             if (present)
             {
                 int dailyWage = Iemployee.DailyWageCalculate();
@@ -32,5 +36,17 @@ namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
             }
         }
 
+
+        public void EmployeePartTimeWage()
+        {
+            // UC:03
+            bool present = Iemployee.EmployeePresentOrNot();
+
+            if (present)
+            {
+                int partTimeWage = Iemployee.PartTimeWageCalculate();
+                Console.WriteLine($"Part Time Wage: {partTimeWage}");
+            }
+        }
     }
 }

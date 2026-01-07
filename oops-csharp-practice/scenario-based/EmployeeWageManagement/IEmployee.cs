@@ -15,5 +15,8 @@ namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
         
         int DailyWageCalculate(); //UC 2
 
+
+        int PartTimeWageCalculate(); //UC:03
+
     }
 }

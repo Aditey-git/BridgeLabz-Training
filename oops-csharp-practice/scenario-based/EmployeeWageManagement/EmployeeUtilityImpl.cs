@@ -11,6 +11,7 @@ namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
         private Employee employee;
         private int wagePerHour = 20;
         private int fullDayHrs = 8;
+        private int partTimeHrs = 4;
 
         public Employee AddEmployee()
         {
@@ -32,6 +33,12 @@ namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
             return wagePerHour * fullDayHrs;
         }
 
+
+        //UC:03
+        public int PartTimeWageCalculate()
+        {
+            return partTimeHrs * wagePerHour;
+        }
 
     }
 }

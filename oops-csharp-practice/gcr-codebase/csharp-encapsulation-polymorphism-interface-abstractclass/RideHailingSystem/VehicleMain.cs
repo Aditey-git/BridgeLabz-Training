@@ -8,5 +8,10 @@ namespace BridgeLabzTraining2.Oops.encapsulation_polymorphism_abstraction.RideHa
 {
     internal class VehicleMain
     {
+	 public static void Main(string[] args)
+ 	 {
+     		RiderMenu menu = new RiderMenu();
+     		menu.Menu();
+ 	 }
     }
 }

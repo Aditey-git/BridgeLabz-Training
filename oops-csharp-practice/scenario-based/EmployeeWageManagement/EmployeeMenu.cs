@@ -16,12 +16,20 @@ namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
             Iemployee = new EmployeeUtilityImpl();
 
             // UC:01
-            bool presentOrNot = Iemployee.EmployeePresentOrNot();
+            bool present = Iemployee.EmployeePresentOrNot();
 
-            if (presentOrNot)
+            if (present)
                 Console.WriteLine("Employee is Present");
             else
                 Console.WriteLine("Employee is Absent");
+
+
+            // UC:02
+            if (present)
+            {
+                int dailyWage = Iemployee.DailyWageCalculate();
+                Console.WriteLine($"Daily Employee Wage: {dailyWage}");
+            }
         }
 
     }

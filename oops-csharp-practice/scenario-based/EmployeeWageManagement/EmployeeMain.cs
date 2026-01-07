@@ -20,6 +20,10 @@ namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
 
             // UC:01
             empMenu.EmployeeChoice();
+
+            // UC:02
+            empMenu.EmployeeChoice();
+
         }
     }
 

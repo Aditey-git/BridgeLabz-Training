@@ -12,6 +12,8 @@ namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
 
         bool EmployeePresentOrNot(); //UC 1
 
+        
+        int DailyWageCalculate(); //UC 2
 
     }
 }

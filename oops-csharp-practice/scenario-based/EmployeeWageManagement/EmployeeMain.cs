@@ -1,24 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
+namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.employee_wage_management
 {
-    internal class EmployeeMain
+    class EmployeeMain
     {
-        public static void Main()
+        public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program");
 
+            EmployeeMenu menu = new EmployeeMenu();
+            menu.EmployeeChoice();
 
-            EmployeeMenu empMenu;
-            empMenu = new EmployeeMenu();
-            empMenu.EmployeeChoice();
-
+            Console.WriteLine("Program terminated.");
         }
     }
-
 }

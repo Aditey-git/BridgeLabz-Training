@@ -1,100 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
+namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.employee_wage_management
 {
     sealed class EmployeeMenu
     {
-        private IEmployee Iemployee;
+        private IEmployee employeeService;
 
-
-        public void presentCheck()
-        {
-            Iemployee = new EmployeeUtilityImpl();
-
-            // UC:01
-            bool present = Iemployee.EmployeePresentOrNot();
-
-            if (present)
-                Console.WriteLine("Employee is Present");
-            else
-                Console.WriteLine("Employee is Absent");
-        }
-
-            
-        public void EmployeeWage() {
-            Iemployee = new EmployeeUtilityImpl();
-
-            // UC:02
-            bool present = Iemployee.EmployeePresentOrNot();
-
-            if (present)
-            {
-                int dailyWage = Iemployee.DailyWageCalculate();
-                Console.WriteLine($"Daily Employee Wage: {dailyWage}");
-            }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-            }
-        }
-
-
-        public void EmployeePartTimeWage()
-        {
-            Iemployee = new EmployeeUtilityImpl();
-
-            // UC:03
-            bool present = Iemployee.EmployeePresentOrNot();
-
-            if (present)
-            {
-                int partTimeWage = Iemployee.PartTimeWageCalculate();
-                Console.WriteLine($"Part Time Wage: {partTimeWage}");
-            }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-            }
-        }
-
-
-        //UC:05
-        public void EmployeeMonthlyWage()
-        {
-            Iemployee = new EmployeeUtilityImpl();
-
-            int workHrs = Iemployee.GetWorkingHrs();
-
-            if(workHrs == 4)
-            {
-                Console.WriteLine($"Montly Wage for this part time employee: {Iemployee.MonthlyPartTimeWage()}" );
-            }
-            else
-            {
-                Console.WriteLine($"Montly Wage for this full time employee: {Iemployee.MonthlyWageCalculate()}");
-            }
-        }
-
-
-        //UC:04
         public void EmployeeChoice()
         {
-            Iemployee = new EmployeeUtilityImpl();
-            bool isRunning = true;
+            employeeService = new EmployeeUtilityImpl();
+            bool exit = false;
 
-            while (isRunning)
+            while (!exit)
             {
-                Console.WriteLine("Select Use Case:");
+                Console.WriteLine("\nSelect Use Case:");
                 Console.WriteLine("1. UC1 - Employee Attendance");
-                Console.WriteLine("2. UC2 & UC3 - Wage Calculate");
-                Console.WriteLine("3. UC5 - Monthly Wage Calculate");
-                Console.WriteLine("4. Exit");
-                Console.WriteLine("Enter your Choice:");
-
+                Console.WriteLine("2. UC2 - Daily Wage");
+                Console.WriteLine("3. UC3 - Part-Time Wage");
+                Console.WriteLine("4. UC4 - Switch Case Attendance");
+                Console.WriteLine("5. UC5 - Monthly Wage");
+                Console.WriteLine("6. UC6 - Wage till Max Hours or Days");
+                Console.WriteLine("7. Exit");
+                Console.Write("Enter choice: ");
 
                 if (!int.TryParse(Console.ReadLine(), out int choice))
                 {
@@ -102,39 +29,106 @@ namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
                     continue;
                 }
 
-
                 switch (choice)
                 {
                     case 1:
-                        presentCheck();
+                        UC1_AttendanceCheck();
                         break;
 
                     case 2:
-                        int workingHrs = Iemployee.GetWorkingHrs();
-
-                        if(workingHrs == 4)
-                        {
-                            EmployeePartTimeWage();
-                        }
-                        else
-                        {
-                            EmployeeWage();
-                        }
+                        UC2_DailyWage();
                         break;
 
                     case 3:
-                        EmployeeMonthlyWage();
+                        UC3_PartTimeWage();
                         break;
 
                     case 4:
-                        isRunning = false;
+                        UC4_SwitchCaseAttendance();
+                        break;
+
+                    case 5:
+                        UC5_MonthlyWage();
+                        break;
+
+                    case 6:
+                        UC6_MaxHoursOrDays();
+                        break;
+
+                    case 7:
+                        exit = true;
+                        Console.WriteLine("Exiting program...");
                         break;
 
                     default:
-                        Console.WriteLine("Entered Wrong Choice");
+                        Console.WriteLine("Invalid choice. Try again.");
                         break;
                 }
             }
+        }
+
+        // UC:01
+        public void UC1_AttendanceCheck()
+        {
+            bool isPresent = employeeService.IsEmployeePresent();
+            Console.WriteLine(isPresent ? "Employee is Present" : "Employee is Absent");
+        }
+
+        // UC:02
+        public void UC2_DailyWage()
+        {
+            if (employeeService.IsEmployeePresent())
+                Console.WriteLine($"Daily Wage: {employeeService.CalculateDailyWage()}");
+            else
+                Console.WriteLine("Employee is absent");
+        }
+
+        // UC:03
+        public void UC3_PartTimeWage()
+        {
+            if (employeeService.IsEmployeePresent())
+                Console.WriteLine($"Part-Time Wage: {employeeService.CalculatePartTimeWage()}");
+            else
+                Console.WriteLine("Employee is absent");
+        }
+
+        // UC:04
+        public void UC4_SwitchCaseAttendance()
+        {
+            int hoursWorked = employeeService.GetWorkingHour();
+
+            if (hoursWorked == 0)
+            {
+                Console.WriteLine("Employee is absent");
+                return;
+            }
+            else if (hoursWorked == 4)
+            {
+                Console.WriteLine("Part-Time Employee");
+            }
+            else if (hoursWorked == 8)
+            {
+                Console.WriteLine("Full-Time Employee");
+            }
+
+            int wage = hoursWorked * 20;
+
+            Console.WriteLine($"Hours Worked: {hoursWorked}");
+            Console.WriteLine($"Daily Wage: {wage}");
+        }
+
+        // UC:05
+        public void UC5_MonthlyWage()
+        {
+            int monthlyWage = employeeService.CalculateMonthlyWage();
+            Console.WriteLine($"Monthly wage of employee is: {monthlyWage}");
+        }
+
+        // UC:06
+        public void UC6_MaxHoursOrDays()
+        {
+            int monthlyWage = employeeService.CalculateWageWithCondition();
+            Console.WriteLine($"Monthly wage of employee is: {monthlyWage}");
         }
     }
 }

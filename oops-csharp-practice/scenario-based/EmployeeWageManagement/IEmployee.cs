@@ -1,27 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
+namespace BridgeLabzTraining.oops_csharp_practice.scenario_based.employee_wage_management
 {
     interface IEmployee
     {
         Employee AddEmployee();
 
-        int GetWorkingHrs();
+        // UC:01
+        bool IsEmployeePresent();
 
-        bool EmployeePresentOrNot(); //UC 1
+        // UC:02
+        int CalculateDailyWage();
 
-        
-        int DailyWageCalculate(); //UC 2
+        // UC:03
+        int CalculatePartTimeWage();
 
+        // UC:04
+        int GetWorkingHour();
 
-        int PartTimeWageCalculate(); //UC:03
+        // UC:05
+        int CalculateMonthlyWage();
 
-        int MonthlyWageCalculate();//UC:05
-        int MonthlyPartTimeWage();
-
+        // UC:06
+        int CalculateWageWithCondition();
     }
 }

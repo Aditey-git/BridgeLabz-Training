@@ -10,6 +10,8 @@ namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
     {
         Employee AddEmployee();
 
+        int GetWorkingHrs();
+
         bool EmployeePresentOrNot(); //UC 1
 
         
@@ -17,6 +19,9 @@ namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
 
 
         int PartTimeWageCalculate(); //UC:03
+
+        int MonthlyWageCalculate();//UC:05
+        int MonthlyPartTimeWage();
 
     }
 }

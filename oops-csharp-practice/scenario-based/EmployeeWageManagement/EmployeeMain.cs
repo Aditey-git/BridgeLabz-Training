@@ -16,17 +16,7 @@ namespace BridgeLabzTraining2.Oops.Scenario_bases.Employee
 
             EmployeeMenu empMenu;
             empMenu = new EmployeeMenu();
-
-
-            // UC:01
             empMenu.EmployeeChoice();
-
-            // UC:02
-            empMenu.EmployeeWage();
-
-            //UC:03
-
-            empMenu.EmployeePartTimeWage();
 
         }
     }

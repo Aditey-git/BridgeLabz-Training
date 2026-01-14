@@ -9,5 +9,7 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
     internal interface IAddressBook
     {
         void AddAContact();
+
+        void UpdateContact();
     }
 }

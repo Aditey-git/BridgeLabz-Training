@@ -11,6 +11,10 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Address Book Program.");
+
+
+            AddressBookMenu menuObj = new AddressBookMenu();
+            menuObj.Menu();
         }
     }
 }

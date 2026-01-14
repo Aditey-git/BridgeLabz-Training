@@ -31,7 +31,29 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
             this.Email = email;
         }
         
+        public void updateName(string name, string lastName)
+        {
+            FirstName = name;
+            LastName = lastName;
+        }
 
+        public void updateAddress(string address,string city,string state,string zipcode)
+        {
+            Address = address;
+            City = city;
+            State = state;
+            ZipCode = zipcode;
+        }
+
+        public void updatePhoneNumber(string phoneNumber)
+        {
+            PhoneNumber = phoneNumber; 
+        }
+
+        public void updateEmail(string email) 
+        { 
+            Email = email;
+        }
         
     }
 }

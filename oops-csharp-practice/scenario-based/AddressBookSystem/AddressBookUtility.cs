@@ -65,9 +65,12 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
             Console.Write("Enter the first name of the contact to be updated: ");
             string inputName = Console.ReadLine();
 
-            foreach(Contact contact in contactsArr)
+            int i = 0;
+
+            while (i < index)
             {
-                if(contact.FirstName.Equals(inputName, StringComparison.OrdinalIgnoreCase))
+
+                if (contactsArr[i].FirstName.Equals(inputName, StringComparison.OrdinalIgnoreCase))
                 {
                     Console.WriteLine("Choose What you want to update =>");
                     Console.WriteLine("1. Update Name");
@@ -85,7 +88,7 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                             Console.Write("Enter new last name: ");
                             string newLastName = Console.ReadLine();
 
-                            contact.updateName(newName, newLastName);
+                            contactsArr[i].UpdateName(newName, newLastName);
 
                             Console.WriteLine("Name of the contact updated");
                             break;
@@ -103,8 +106,8 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                             Console.Write("Enter the new Zip Code: ");
                             string newZipCode = Console.ReadLine();
 
-                            contact.updateAddress(newAddress, 
-                                newCity,    newState, 
+                            contactsArr[i].UpdateAddress(newAddress,
+                                newCity, newState,
                                 newZipCode);
 
                             Console.WriteLine("Address of the contact updated.");
@@ -116,7 +119,7 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                             Console.Write("Enter the new PhoneNumber:");
                             string newPhnNum = Console.ReadLine();
 
-                            contact.updatePhoneNumber(newPhnNum);
+                            contactsArr[i].UpdatePhoneNumber(newPhnNum);
 
                             Console.WriteLine("Phone number updated.");
                             break;
@@ -125,7 +128,7 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                             Console.Write("Enter the new email: ");
                             string newEmail = Console.ReadLine();
 
-                            contact.updateEmail(newEmail);
+                            contactsArr[i].UpdateEmail(newEmail);
 
                             Console.WriteLine("Email updated.");
                             break;
@@ -135,11 +138,47 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                     }
                     return;
                 }
+                i++;
             }
+            
 
             Console.WriteLine("Contact not found.");
 
         }
 
+
+        public void DeleteContactUsingName()
+        {
+            Console.Write("Enter the contact name you want to delete:");
+            string inputName = Console.ReadLine();
+
+            int nameIndex = -1;
+            for(int i =0; i < index; i++)
+            {
+                if (contactsArr[i].FirstName.Equals(inputName, StringComparison.OrdinalIgnoreCase))
+                {
+                    nameIndex = i;
+                    break;
+                }
+            }
+
+
+            if(nameIndex == -1)
+            {
+                Console.WriteLine("Contact not found.");
+                return;
+            }
+
+
+            for(int i = nameIndex; i < index-1; i++)
+            {
+                contactsArr[i] = contactsArr[i + 1];
+            }
+
+            contactsArr[index - 1] = null;
+            index = index - 1;
+
+            Console.WriteLine("Contacts Deleted Successfully");
+        }
     }
 }

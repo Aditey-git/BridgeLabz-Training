@@ -13,5 +13,7 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
         void UpdateContact();
 
         void DeleteContactUsingName();
+
+        void AddMultipleContacts();
     }
 }

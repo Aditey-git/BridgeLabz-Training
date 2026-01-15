@@ -180,5 +180,30 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
 
             Console.WriteLine("Contacts Deleted Successfully");
         }
+
+
+        public void AddMultipleContacts()
+        {
+            bool isTrue = true;
+
+            while (isTrue)
+            {
+                Console.WriteLine("Do you want to add a contact in the address book?(Yes/No)");
+                string inputAnswer = Console.ReadLine();
+
+                if (inputAnswer.Equals("Yes"))
+                {
+                    AddAContact();
+                }
+                else if (inputAnswer.Equals("No"))
+                {
+                    isTrue = false;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input!");
+                }
+            }
+        }
     }
 }

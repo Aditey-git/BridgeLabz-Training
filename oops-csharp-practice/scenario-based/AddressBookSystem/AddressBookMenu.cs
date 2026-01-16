@@ -8,11 +8,13 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
 {
     internal class AddressBookMenu
     {
-        private IAddressBook AddressBook;
+        private IAddressBook addressBook;
+        private MultipleAddressBookUtility multipleAddressBook;
 
         public void Menu()
         {
-            AddressBook = new AddressBookUtility();
+            multipleAddressBook = new MultipleAddressBookUtility();
+            addressBook = new AddressBookUtility(multipleAddressBook);
 
             bool isRunning = true;
 
@@ -23,7 +25,8 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                 Console.WriteLine("2. Update a contact.");
                 Console.WriteLine("3. Delete a contact.");
                 Console.WriteLine("4. Add Multiple contacts.");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("5. Add A Address Book.");
+                Console.WriteLine("6. Exit.");
 
                 Console.Write("Choose:");
 
@@ -32,18 +35,21 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                 switch (option)
                 {
                     case 1:
-                        AddressBook.AddAContact();
+                        addressBook.AddAContact();
                         break;
                     case 2:
-                        AddressBook.UpdateContact();
+                        addressBook.UpdateContact();
                         break;
                     case 3:
-                        AddressBook.DeleteContactUsingName();
+                        addressBook.DeleteContactUsingName();
                         break;
                     case 4:
-                        AddressBook.AddMultipleContacts();
+                        addressBook.AddMultipleContacts();
                         break;
                     case 5:
+                        multipleAddressBook.AddAAddressBook();
+                        break;
+                    case 6:
                         isRunning = false;
                         break;
                     default:

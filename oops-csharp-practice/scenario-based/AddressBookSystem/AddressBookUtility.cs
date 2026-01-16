@@ -9,18 +9,28 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
 {
     internal class AddressBookUtility : IAddressBook
     {
-        private Contact[] contactsArr;
-        private int index = 0;
 
-        public AddressBookUtility()
+        MultipleAddressBookUtility AddressBookList;
+
+        public AddressBookUtility(MultipleAddressBookUtility multipleAddressBook)
         {
-            contactsArr = new Contact[20];
+            this.AddressBookList = multipleAddressBook;
         }
 
         public void AddAContact()
         {
+            Console.WriteLine("Enter the name of address book you want to the contact to be added in: ");
+            string addressBookName = Console.ReadLine();
 
-            if (index >= contactsArr.Length)
+            AddressBook book = AddressBookList.FetchAddressBook(addressBookName);
+
+            if(book == null)
+            {
+                Console.WriteLine("No such Address Book Exist.");
+                return;
+            }
+
+            if (book.Index >= book.ContactsArr.Length)
             {
                 Console.WriteLine("Address Book is full!");
                 return;
@@ -52,8 +62,8 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
 
 
             Contact contact = new Contact(name, lastName, address, city, state, zipcode, phoneNumber, email);
-            contactsArr[index] = contact;
-            index++;
+            book.ContactsArr[book.Index] = contact;
+            book.Index++;
 
 
             Console.WriteLine("Contact added successfully");
@@ -62,15 +72,26 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
 
         public void UpdateContact()
         {
+            Console.WriteLine("Enter the name of address book you want to the contact to be updated in: ");
+            string addressBookName = Console.ReadLine();
+
+            AddressBook book = AddressBookList.FetchAddressBook(addressBookName);
+
+            if (book == null)
+            {
+                Console.WriteLine("No such Address Book Exist.");
+                return;
+            }
+
             Console.Write("Enter the first name of the contact to be updated: ");
             string inputName = Console.ReadLine();
 
             int i = 0;
 
-            while (i < index)
+            while (i < book.Index)
             {
 
-                if (contactsArr[i].FirstName.Equals(inputName, StringComparison.OrdinalIgnoreCase))
+                if (book.ContactsArr[i].FirstName.Equals(inputName, StringComparison.OrdinalIgnoreCase))
                 {
                     Console.WriteLine("Choose What you want to update =>");
                     Console.WriteLine("1. Update Name");
@@ -88,7 +109,7 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                             Console.Write("Enter new last name: ");
                             string newLastName = Console.ReadLine();
 
-                            contactsArr[i].UpdateName(newName, newLastName);
+                            book.ContactsArr[i].UpdateName(newName, newLastName);
 
                             Console.WriteLine("Name of the contact updated");
                             break;
@@ -106,7 +127,7 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                             Console.Write("Enter the new Zip Code: ");
                             string newZipCode = Console.ReadLine();
 
-                            contactsArr[i].UpdateAddress(newAddress,
+                            book.ContactsArr[i].UpdateAddress(newAddress,
                                 newCity, newState,
                                 newZipCode);
 
@@ -119,7 +140,7 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                             Console.Write("Enter the new PhoneNumber:");
                             string newPhnNum = Console.ReadLine();
 
-                            contactsArr[i].UpdatePhoneNumber(newPhnNum);
+                            book.ContactsArr[i].UpdatePhoneNumber(newPhnNum);
 
                             Console.WriteLine("Phone number updated.");
                             break;
@@ -128,7 +149,7 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                             Console.Write("Enter the new email: ");
                             string newEmail = Console.ReadLine();
 
-                            contactsArr[i].UpdateEmail(newEmail);
+                            book.ContactsArr[i].UpdateEmail(newEmail);
 
                             Console.WriteLine("Email updated.");
                             break;
@@ -149,13 +170,24 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
 
         public void DeleteContactUsingName()
         {
+            Console.WriteLine("Enter the name of address book you want to the contact to be deleted from: ");
+            string addressBookName = Console.ReadLine();
+
+            AddressBook book = AddressBookList.FetchAddressBook(addressBookName);
+
+            if (book == null)
+            {
+                Console.WriteLine("No such Address Book Exist.");
+                return;
+            }
+
             Console.Write("Enter the contact name you want to delete:");
             string inputName = Console.ReadLine();
 
             int nameIndex = -1;
-            for(int i =0; i < index; i++)
+            for(int i =0; i < book.Index; i++)
             {
-                if (contactsArr[i].FirstName.Equals(inputName, StringComparison.OrdinalIgnoreCase))
+                if (book.ContactsArr[i].FirstName.Equals(inputName, StringComparison.OrdinalIgnoreCase))
                 {
                     nameIndex = i;
                     break;
@@ -170,13 +202,13 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
             }
 
 
-            for(int i = nameIndex; i < index-1; i++)
+            for(int i = nameIndex; i < book.Index-1; i++)
             {
-                contactsArr[i] = contactsArr[i + 1];
+                book.ContactsArr[i] = book.ContactsArr[i + 1];
             }
 
-            contactsArr[index - 1] = null;
-            index = index - 1;
+            book.ContactsArr[book.Index - 1] = null;
+            book.Index = book.Index - 1;
 
             Console.WriteLine("Contacts Deleted Successfully");
         }

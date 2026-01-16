@@ -15,5 +15,7 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
         void DeleteContactUsingName();
 
         void AddMultipleContacts();
+
+        void SearchByCityOrState();
     }
 }

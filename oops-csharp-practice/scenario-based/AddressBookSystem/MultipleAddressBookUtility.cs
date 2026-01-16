@@ -8,8 +8,8 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
 {
     internal class MultipleAddressBookUtility : IAddressBookUtility
     {
-        AddressBook[] AddressBooksList = new AddressBook[20];
-        int idx = 0;
+        public AddressBook[] AddressBooksArr = new AddressBook[20];
+        public int idx = 0;
 
         public void AddAAddressBook()
         {
@@ -17,7 +17,7 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
             string addressBookName = Console.ReadLine();
 
             AddressBook book = new AddressBook(addressBookName);
-            AddressBooksList[idx] = book;
+            AddressBooksArr[idx] = book;
             idx++;
             Console.WriteLine("Address Book Added succsefully.\n\n\n");
         }
@@ -28,9 +28,9 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
             
             for(int i = 0; i < idx;i++)
             {
-                if (AddressBooksList[i].AddressBookName.Equals(addressBookName, StringComparison.OrdinalIgnoreCase))
+                if (AddressBooksArr[i].AddressBookName.Equals(addressBookName, StringComparison.OrdinalIgnoreCase))
                 {
-                    return AddressBooksList[i];
+                    return AddressBooksArr[i];
                 }
             }
             return null;

@@ -27,7 +27,8 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                 Console.WriteLine("3. Delete a contact.");
                 Console.WriteLine("4. Add Multiple contacts.");
                 Console.WriteLine("5. Add A Address Book.");
-                Console.WriteLine("6. Exit.");
+                Console.WriteLine("6. Search a Contact by city or state.");
+                Console.WriteLine("7. Exit.");
 
                 Console.Write("Choose:");
 
@@ -51,6 +52,9 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                         multipleAddressBook.AddAAddressBook();
                         break;
                     case 6:
+                        addressBook.SearchByCityOrState();
+                        break;
+                    case 7:
                         isRunning = false;
                         break;
                     default:

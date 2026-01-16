@@ -54,6 +54,15 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
         { 
             Email = email;
         }
+
+
+        public override string ToString()
+        {
+            return $"Name: {FirstName} {LastName} \n" +
+                   $"Address: {Address}, {City}, {State} - {ZipCode} \n" + 
+                   $"Phone Number: {PhoneNumber} \n" +
+                   $"Email: {Email}";
+        }
         
     }
 }

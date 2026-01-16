@@ -248,7 +248,54 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
             }
         }
 
-        
+        public void SearchByCityOrState()
+        {
+            Console.WriteLine("Press preffred button:");
+            Console.WriteLine("1. City");
+            Console.WriteLine("2. State");
+            int option = Convert.ToInt32(Console.ReadLine());
+
+            switch (option)
+            {
+                case 1:
+                    Console.Write("Enter the city to be searched:");
+                    string inputCity = Console.ReadLine();
+
+                    for(int i = 0; i < AddressBookList.idx; i++)
+                    {
+                        for(int j = 0; j < AddressBookList.AddressBooksArr[i].Index; j++)
+                        {
+                            if (AddressBookList.AddressBooksArr[i].ContactsArr[j].City.Equals(inputCity, StringComparison.OrdinalIgnoreCase))
+                            {
+                                Console.WriteLine(AddressBookList.AddressBooksArr[i].ContactsArr[j].ToString());
+                                Console.WriteLine("=============================================");
+                            }
+                        }
+                    }
+
+                    break;
+
+
+                case 2:
+                    Console.Write("Enter the state to be searched:");
+                    string inputState = Console.ReadLine();
+
+
+                    for (int i = 0; i < AddressBookList.idx; i++)
+                    {
+                        for (int j = 0; j < AddressBookList.AddressBooksArr[i].Index; j++)
+                        {
+                            if (AddressBookList.AddressBooksArr[i].ContactsArr[j].State.Equals(inputState, StringComparison.OrdinalIgnoreCase))
+                            {
+                                Console.WriteLine(AddressBookList.AddressBooksArr[i].ContactsArr[j].ToString());
+                                Console.WriteLine("=============================================");
+                            }
+                        }
+                    }
+
+                    break;
+            }
+        }
 
     }
 }

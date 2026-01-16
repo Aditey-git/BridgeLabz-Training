@@ -20,7 +20,8 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
 
             while (isRunning)
             {
-                Console.WriteLine("Below are the functionalities of the address book =>");
+                Console.WriteLine("=============================================================");
+                Console.WriteLine("\n\nBelow are the functionalities of the address book =>");
                 Console.WriteLine("1. Add a contact.");
                 Console.WriteLine("2. Update a contact.");
                 Console.WriteLine("3. Delete a contact.");

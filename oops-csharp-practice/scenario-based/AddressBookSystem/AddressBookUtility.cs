@@ -42,6 +42,16 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
             Console.Write("Enter the last name of the contact:");
             string lastName = Console.ReadLine();
 
+
+            for (int i = 0; i < book.Index; i++) {
+                if (book.ContactsArr[i].FirstName.Equals(name, StringComparison.OrdinalIgnoreCase) && book.ContactsArr[i].LastName.Equals(lastName, StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine("Duplicate Entry! Contact already exists.");
+                    return;
+                }
+            }
+
+
             Console.Write("Enter the address:");
             string address = Console.ReadLine();
 
@@ -237,5 +247,8 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                 }
             }
         }
+
+        
+
     }
 }

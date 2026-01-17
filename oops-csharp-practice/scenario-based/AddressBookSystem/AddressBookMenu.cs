@@ -29,7 +29,8 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                 Console.WriteLine("5. Add A Address Book.");
                 Console.WriteLine("6. Search a Contact by city or state.");
                 Console.WriteLine("7. Display Contacts using city or state.");
-                Console.WriteLine("8. Exit.");
+                Console.WriteLine("8. Count the number of contacts by city or state.");
+                Console.WriteLine("9. Exit.");
 
                 Console.Write("Choose:");
 
@@ -73,6 +74,9 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                         }
                         break;
                     case 8:
+                        addressBook.CountContactByCityOrState();
+                        break;
+                    case 9:
                         isRunning = false;
                         break;
                     default:

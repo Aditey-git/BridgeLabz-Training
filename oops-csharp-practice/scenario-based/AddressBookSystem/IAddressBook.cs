@@ -21,5 +21,7 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
         void DisplayCityAndName();
 
         void DisplayStateAndName();
+
+        void CountContactByCityOrState();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -352,5 +353,53 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                 Console.WriteLine($"Name: {stateAndName[i, 1]} & State: {stateAndName[i, 0]}");
             }
         }
+
+
+        public void CountContactByCityOrState()
+        {
+            int count = 0;
+            
+            Console.Write("Count by city or state(1/2)");
+            int input = int.Parse(Console.ReadLine());
+
+
+            switch (input) {
+                case 1:
+                    Console.Write("Enter the name of the city:");
+                    string inputCity = Console.ReadLine();
+                    for (int i = 0; i < AddressBookList.idx; i++)
+                    {
+                        for (int j = 0; j < AddressBookList.AddressBooksArr[i].Index; j++)
+                        {
+                            if (AddressBookList.AddressBooksArr[i].ContactsArr[j].City.Equals(inputCity, StringComparison.OrdinalIgnoreCase))
+                            {
+                                count++;
+                            }
+                        }
+                    }
+
+                    break;
+
+                case 2:
+                    Console.Write("Enter the name of the state: ");
+                    string inputState = Console.ReadLine();
+
+                    for(int i = 0; i < AddressBookList.idx; i++)
+                    {
+                        for(int j = 0; j < AddressBookList.AddressBooksArr[i].Index; j++)
+                        {
+                            if (AddressBookList.AddressBooksArr[i].ContactsArr[j].State.Equals(inputState, StringComparison.OrdinalIgnoreCase))
+                            {
+                                count++;
+                            }
+                        }
+                    }
+
+                    break;
+            }
+
+            Console.WriteLine($"Number of Contacts: {count}");
+        }
+
     }
 }

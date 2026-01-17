@@ -17,5 +17,9 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
         void AddMultipleContacts();
 
         void SearchByCityOrState();
+
+        void DisplayCityAndName();
+
+        void DisplayStateAndName();
     }
 }

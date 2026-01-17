@@ -28,7 +28,8 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                 Console.WriteLine("4. Add Multiple contacts.");
                 Console.WriteLine("5. Add A Address Book.");
                 Console.WriteLine("6. Search a Contact by city or state.");
-                Console.WriteLine("7. Exit.");
+                Console.WriteLine("7. Display Contacts using city or state.");
+                Console.WriteLine("8. Exit.");
 
                 Console.Write("Choose:");
 
@@ -55,6 +56,23 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                         addressBook.SearchByCityOrState();
                         break;
                     case 7:
+                        Console.Write("Enter whether you want to Search by city or state: ");
+                        string inputStr = Console.ReadLine();
+
+                        if(inputStr.Equals("City", StringComparison.OrdinalIgnoreCase))
+                        {
+                            addressBook.DisplayCityAndName();
+                        }
+                        else if (inputStr.Equals("State",StringComparison.OrdinalIgnoreCase))
+                        {
+                            addressBook.DisplayStateAndName();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Wrong Choice");
+                        }
+                        break;
+                    case 8:
                         isRunning = false;
                         break;
                     default:

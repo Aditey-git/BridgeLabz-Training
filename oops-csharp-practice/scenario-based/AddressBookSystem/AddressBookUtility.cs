@@ -12,6 +12,12 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
 
         MultipleAddressBookUtility AddressBookList;
 
+        string[,] cityAndName = new string[20,2];
+        int cityInd = 0;
+
+        string[,] stateAndName = new string[20, 2];
+        int stateInd = 0;
+
         public AddressBookUtility(MultipleAddressBookUtility multipleAddressBook)
         {
             this.AddressBookList = multipleAddressBook;
@@ -297,5 +303,54 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
             }
         }
 
+        public void StoreCityAndName()
+        {
+            cityInd = 0;
+            for(int i = 0; i < AddressBookList.idx; i++)
+            {
+                for(int j = 0; j < AddressBookList.AddressBooksArr[i].Index; j++)
+                {
+                    cityAndName[cityInd, 0] = AddressBookList.AddressBooksArr[i].ContactsArr[j].City;
+                    cityAndName[cityInd, 1] = AddressBookList.AddressBooksArr[i].ContactsArr[j].FirstName + " " + AddressBookList.AddressBooksArr[i].ContactsArr[j].LastName;
+                    cityInd++;
+                }
+            }
+        }
+
+
+        public void StoreStateAndName()
+        {
+            stateInd = 0;
+            for (int i = 0; i < AddressBookList.idx; i++)
+            {
+                for (int j = 0; j < AddressBookList.AddressBooksArr[i].Index; j++)
+                {
+                    stateAndName[stateInd, 0] = AddressBookList.AddressBooksArr[i].ContactsArr[j].State;
+                    stateAndName[stateInd, 1] = AddressBookList.AddressBooksArr[i].ContactsArr[j].FirstName + " " + AddressBookList.AddressBooksArr[i].ContactsArr[j].LastName;
+                    stateInd++;
+                }
+            }
+        }
+
+
+
+        public void DisplayCityAndName()
+        {
+            StoreCityAndName();
+            for(int i = 0; i < cityInd; i++)
+            {
+                Console.WriteLine($"Name: {cityAndName[i,1]} & City: {cityAndName[i,0]}");
+            }
+        }
+
+
+        public void DisplayStateAndName()
+        {
+            StoreStateAndName();
+            for (int i = 0; i < stateInd; i++)
+            {
+                Console.WriteLine($"Name: {stateAndName[i, 1]} & State: {stateAndName[i, 0]}");
+            }
+        }
     }
 }

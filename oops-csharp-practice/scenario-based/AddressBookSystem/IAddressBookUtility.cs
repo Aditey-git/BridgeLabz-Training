@@ -11,5 +11,7 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
         void AddAAddressBook();
 
         AddressBook FetchAddressBook(string addressBookName);
+
+        void DisplayAnAddressBook(string addressBookName);
     }
 }

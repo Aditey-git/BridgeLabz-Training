@@ -401,5 +401,86 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
             Console.WriteLine($"Number of Contacts: {count}");
         }
 
+
+        public void SortAnAddressBook()
+        {
+            Console.Write("Enter the Address Book You want to sort:");
+
+            string inputString = Console.ReadLine();
+
+            for(int i = 0;i < AddressBookList.idx;i++)
+            {
+                if (AddressBookList.AddressBooksArr[i].AddressBookName.Equals(inputString, StringComparison.OrdinalIgnoreCase))
+                {
+                    MergeSort(AddressBookList.AddressBooksArr[i].ContactsArr, 0, AddressBookList.AddressBooksArr[i].Index - 1);
+                    Console.WriteLine("The sorted Address Book is:");
+
+                    AddressBookList.DisplayAnAddressBook(inputString);
+                    return;
+                }
+            }
+
+            Console.WriteLine("Address Book Not found");
+
+        }
+
+
+        public void MergeSort(Contact[] arr,int l, int r)
+        {
+            if(l >= r)
+            {
+                return;
+            }
+
+            int m = (l + r) / 2;
+            MergeSort(arr, l, m);
+            MergeSort(arr, m + 1, r);
+            Merge(arr, l, m, r);
+
+        }
+
+
+        public void Merge(Contact[] arr, int l, int m, int r)
+        {
+            Contact[] temp = new Contact[r-l+1];
+            int indexOfTemp = 0;
+
+            int left = l;
+            int right = m + 1;
+
+            while(left <= m && right <= r)
+            {
+                if (arr[left].FirstName.CompareTo(arr[right].FirstName) > 0 || (arr[left].FirstName.CompareTo(arr[right].FirstName) == 0  &&  arr[left].LastName.CompareTo(arr[right].LastName ) > 0))
+                {
+                    temp[indexOfTemp] = arr[right];
+                    indexOfTemp++;
+                    right++;
+                }
+                else
+                {
+                    temp[indexOfTemp] = arr[left];
+                    indexOfTemp++;
+                    left++;
+                }
+            }
+
+            while (left <= m)
+            {
+                temp[indexOfTemp++] = arr[left++];
+            }
+
+            while(right <= r)
+            {
+                temp[indexOfTemp++] = arr[right++];
+            }
+
+            indexOfTemp = 0;
+            for(int i = l; i <= r;i++)
+            {
+                arr[i] = temp[indexOfTemp];
+                indexOfTemp++;
+            }
+
+        }
     }
 }

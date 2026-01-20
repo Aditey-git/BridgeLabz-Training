@@ -35,5 +35,27 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
             }
             return null;
         }
+
+        public void DisplayAnAddressBook(string nameOfAddressBook)
+        {
+            for(int i = 0; i < idx; i++)
+            {
+                if (AddressBooksArr[i].AddressBookName.Equals(nameOfAddressBook, StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine($"Name of the address book is: {AddressBooksArr[i].AddressBookName}");
+                    Console.WriteLine("Contacts: \n");
+
+                    for(int j = 0; j < AddressBooksArr[i].Index; j++)
+                    {
+                        Console.WriteLine(AddressBooksArr[i].ContactsArr[j].ToString);
+                        Console.WriteLine("==================================================");
+                    }
+
+                    return;
+                }
+            }
+
+            Console.WriteLine("Address Book Not Found");
+        }
     }
 }

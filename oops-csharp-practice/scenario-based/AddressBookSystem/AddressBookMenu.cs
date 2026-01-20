@@ -30,7 +30,8 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                 Console.WriteLine("6. Search a Contact by city or state.");
                 Console.WriteLine("7. Display Contacts using city or state.");
                 Console.WriteLine("8. Count the number of contacts by city or state.");
-                Console.WriteLine("9. Exit.");
+                Console.WriteLine("9. Sort an address book by its contact's name.");
+                Console.WriteLine("10. Exit.");
 
                 Console.Write("Choose:");
 
@@ -41,21 +42,27 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                     case 1:
                         addressBook.AddAContact();
                         break;
+
                     case 2:
                         addressBook.UpdateContact();
                         break;
+
                     case 3:
                         addressBook.DeleteContactUsingName();
                         break;
+
                     case 4:
                         addressBook.AddMultipleContacts();
                         break;
+
                     case 5:
                         multipleAddressBook.AddAAddressBook();
                         break;
+
                     case 6:
                         addressBook.SearchByCityOrState();
                         break;
+
                     case 7:
                         Console.Write("Enter whether you want to Search by city or state: ");
                         string inputStr = Console.ReadLine();
@@ -73,15 +80,23 @@ namespace BridgeLabzTraining2.Oops.AddressBookSystem
                             Console.WriteLine("Wrong Choice");
                         }
                         break;
+
                     case 8:
                         addressBook.CountContactByCityOrState();
                         break;
+
                     case 9:
+                        addressBook.SortAnAddressBook();
+                        break;
+
+                    case 10:
                         isRunning = false;
                         break;
+
                     default:
                         Console.WriteLine("Wrong Choice!");
                         break;
+
                 }
             }
         }

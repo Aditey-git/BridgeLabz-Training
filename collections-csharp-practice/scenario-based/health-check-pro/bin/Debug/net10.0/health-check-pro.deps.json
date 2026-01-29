@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "health-check-pro/1.0.0": {
+        "runtime": {
+          "health-check-pro.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "health-check-pro/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

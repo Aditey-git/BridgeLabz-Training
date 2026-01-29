@@ -1,0 +1,14 @@
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\obj\Debug\net10.0\health-check-pro.GeneratedMSBuildEditorConfig.editorconfig
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\obj\Debug\net10.0\health-check-pro.AssemblyInfoInputs.cache
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\obj\Debug\net10.0\health-check-pro.AssemblyInfo.cs
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\obj\Debug\net10.0\health-check-pro.csproj.CoreCompileInputs.cache
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\bin\Debug\net10.0\health-check-pro.exe
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\bin\Debug\net10.0\health-check-pro.deps.json
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\bin\Debug\net10.0\health-check-pro.runtimeconfig.json
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\bin\Debug\net10.0\health-check-pro.dll
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\bin\Debug\net10.0\health-check-pro.pdb
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\obj\Debug\net10.0\health-check-pro.dll
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\obj\Debug\net10.0\refint\health-check-pro.dll
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\obj\Debug\net10.0\health-check-pro.pdb
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\obj\Debug\net10.0\health-check-pro.genruntimeconfig.cache
+D:\BridgeLabzTraining(VS code)\collection-csharp-practice\scenario-based\health-check-pro\obj\Debug\net10.0\ref\health-check-pro.dll
